@@ -3,48 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Valentine Story ❤️</title>
+<title>Happy Valentine’s Day ❤️</title>
 
 <style>
 body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+    background: black;
     color: white;
     text-align: center;
     overflow-x: hidden;
 }
 
-/* Cover Section */
-.cover {
-    height: 100vh;
-    background: url('cover.JPG') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-attachment: fixed;
-}
-
-.cover h1 {
-    font-size: 45px;
-    background: rgba(0,0,0,0.5);
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.enter-btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    font-size: 18px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    background: pink;
-}
-
-/* Stars */
+/* Star background */
 .stars {
     position: fixed;
     width: 100%;
@@ -65,6 +37,50 @@ body {
     to { opacity: 1; }
 }
 
+/* Cover section */
+.cover {
+    min-height: 100vh;
+    background: url('cover.JPG') center center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.cover h1 {
+    font-size: 45px;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.enter-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background: pink;
+}
+
+/* Mobile cover fix */
+@media (max-width: 768px) {
+    .cover {
+        background-size: contain;
+        background-color: black;
+        min-height: auto;
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .cover h1 {
+        font-size: 26px;
+    }
+}
+
 /* Floating hearts */
 .heart {
     position: fixed;
@@ -82,7 +98,7 @@ body {
 /* Flip Card */
 .card-container {
     perspective: 1000px;
-    margin: 50px auto;
+    margin: 60px auto;
 }
 
 .card {
@@ -109,8 +125,8 @@ body {
     padding: 20px;
 }
 
-.front { background: rgba(255,255,255,0.2); }
-.back  { background: rgba(255,105,180,0.4); transform: rotateY(180deg); }
+.front { background: rgba(0,0,0,0.6); }
+.back  { background: rgba(255,105,180,0.7); transform: rotateY(180deg); }
 
 /* Photo Reel */
 .reel-container {
@@ -144,7 +160,16 @@ body {
     100% { transform: translateX(-400%); }
 }
 
-/* Proposal Button */
+/* Message */
+.vday-message {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+}
+
+/* Proposal */
 .proposal-btn {
     padding: 12px 25px;
     border-radius: 25px;
@@ -155,27 +180,13 @@ body {
     margin: 20px;
     cursor: pointer;
 }
-
-/* Valentine Message */
-.vday-message {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 15px;
-}
-
-/* Mobile */
-@media (max-width:480px){
-    .cover h1 { font-size: 28px; }
-}
 </style>
 </head>
 <body>
 
 <div class="stars" id="stars"></div>
 
-<!-- Cover Section -->
+<!-- Cover -->
 <div class="cover">
     <h1>Happy Valentine’s Day ❤️</h1>
     <button class="enter-btn" onclick="enterSite()">Enter Our Love Story 💖</button>
@@ -186,7 +197,7 @@ body {
     <div class="card" id="card" onclick="flipCard()">
         <div class="card-face front">Tap to Open 💌</div>
         <div class="card-face back">
-            You are my moon, my stars, my forever ❤️
+            You are my today, my tomorrow, and my forever ❤️
         </div>
     </div>
 </div>
@@ -204,9 +215,9 @@ body {
 
 <!-- Message -->
 <div class="vday-message">
-    Valentine’s Day is not just about gifts.  
-    It’s about love, memories, and the beautiful journey we share.  
-    Every moment with you feels magical. ❤️
+    Valentine’s Day is about love, memories, and the beautiful journey we share.  
+    Every moment with you feels magical.  
+    Thank you for being my forever. ❤️
 </div>
 
 <!-- Proposal -->
@@ -260,4 +271,3 @@ setInterval(() => {
 
 </body>
 </html>
-
